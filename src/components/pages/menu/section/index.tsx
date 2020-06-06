@@ -17,7 +17,9 @@ const MenuSectionPage: React.FC<MenuSectionPageProps> = (props) => {
 
   // cdm
   React.useEffect(() => {
-    fetchMenuSection(sectionId);
+    if (!sectionId) {
+      fetchMenuSection(sectionId);
+    }
   }, [fetchMenuSection, sectionId]);
 
   // cdu
