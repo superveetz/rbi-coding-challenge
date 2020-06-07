@@ -17,15 +17,15 @@ const MenuSectionPage: React.FC<MenuSectionPageProps> = (props) => {
 
   // cdm
   React.useEffect(() => {
-    if (!sectionId) {
+    if (sectionId) {
       fetchMenuSection(sectionId);
     }
-  }, [fetchMenuSection, sectionId]);
+  }, []);
 
   // cdu
   const prevSectionId = usePrevious(sectionId);
   React.useEffect(() => {
-    if (prevSectionId !== sectionId) {
+    if (prevSectionId !== undefined && prevSectionId !== sectionId) {
       fetchMenuSection(sectionId);
     }
   }, [fetchMenuSection, prevSectionId, sectionId]);

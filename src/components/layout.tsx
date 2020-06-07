@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 
 // src
 import GlobalStyle from 'components/global-styles';
+import MainNavBar from 'components/navigation/main-navbar/container';
 import Routing from 'components/navigation/_routing/container';
 import Footer from 'components/navigation/footer';
 
@@ -21,6 +22,8 @@ const AppLayout: React.FC<AppLayoutProps> = (props) => {
   return (
     <AppLayoutWrapper>
       <GlobalStyle />
+
+      <MainNavBar />
 
       <Routing />
 
